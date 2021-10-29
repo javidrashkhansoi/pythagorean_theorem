@@ -847,19 +847,19 @@ def pythagorean_theorem_run_function(*, first_leg: int | float | None = None,
 if __name__ == '__main__':
     print('\nRun function')
     pythagorean_theorem_run_function(
-        first_leg=1,
-        second_leg=1,
-        # hypotenuse=0.14,
+        first_leg=3,
+        second_leg=4,
+        hypotenuse=5,
         unit='cm',
         sides=True,
         perimeter=False,
         area=False,
-        rounding=False,
+        rounding=True,
         probable=False,
         explanation=False,
         limitation=True,
         only_integers=False,
         automatic_parameters=True,
-        all_meanings=True
+        all_meanings=False
     )
     print('\nEnd function')
