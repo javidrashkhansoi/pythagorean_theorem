@@ -542,7 +542,10 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
             print(f'Hypotenuse: {hcm}'
                   f'{unit}')
         else:
-            print(hcm)
+            if unit == '':
+                print(hcm)
+            else:
+                print(f'{hcm}{unit}')
     if ((first_leg is None
          and second_leg is not None)
         or (second_leg is None
@@ -562,7 +565,10 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                   if first_leg is None else
                   f'Second leg: {lcm}{unit}')
         else:
-            print(lcm)
+            if unit == '':
+                print(lcm)
+            else:
+                print(f'{lcm}{unit}')
     if hypotenuse is not None \
             and first_leg is None \
             and second_leg is None \
@@ -578,7 +584,13 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                       f'leg: {sl}{unit}')
                 counter += 1
         else:
-            print(plcm)
+            if unit == '':
+                print(plcm)
+            else:
+                plcm_list: list = []
+                for pl, cm in plcm:
+                    plcm_list.append((f'{pl}{unit}', f'{cm}{unit}'))
+                print(plcm_list)
     if ((first_leg is not None
          and second_leg is None)
         or (second_leg is not None
@@ -601,7 +613,13 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                       f'leg: {l}{unit}')
                 counter += 1
         else:
-            print(phlcm)
+            if unit == '':
+                print(phlcm)
+            else:
+                phlcm_list: list = []
+                for phl, cm in phlcm:
+                    phlcm_list.append((f'{phl}{unit}', f'{cm}{unit}'))
+                print(phlcm_list)
     if (perimeter
         or area) \
             and explanation:
