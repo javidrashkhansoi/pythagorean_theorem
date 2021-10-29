@@ -374,7 +374,7 @@ class PythagoreanTheoremClass:
 def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                                  second_leg: int | float | None = None,
                                  hypotenuse: int | float | None = None,
-                                 unit: str = "",
+                                 unit: str = '',
                                  sides: bool = True,
                                  perimeter: bool = False,
                                  area: bool = False,
@@ -653,7 +653,7 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                 or (second_leg is None
                     and hypotenuse is None)) \
                     and probable:
-                print("\nThe probable perimeters " + probable_string)
+                print('\nThe probable perimeters ' + probable_string)
                 counter: int = 1
                 for p in pcm:
                     print(f'{counter}. Probable perimeter: {p}{unit}')
@@ -664,7 +664,7 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                         and hypotenuse is not None) \
                     or (second_leg is not None
                         and hypotenuse is not None):
-                print("\nThe perimeter " + accurate_string)
+                print('\nThe perimeter ' + accurate_string)
                 print(f'Perimeter: {pcm}'
                       f'{unit if unit is not None else ""}')
         else:
@@ -678,7 +678,10 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                         perimeter_list.append(f'{p}{unit}')
                     print(perimeter_list)
             elif not isinstance(pcm, list):
-                print(pcm)
+                if unit == '':
+                    print(pcm)
+                else:
+                    print(f'{pcm}{unit}')
 
     if area \
             and acm is not None:
@@ -691,7 +694,7 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                 or (second_leg is None
                     and hypotenuse is None)) \
                     and probable:
-                print("\nThe probable areas " + probable_string)
+                print('\nThe probable areas ' + probable_string)
                 counter: int = 1
                 for a in acm:
                     print(f'{counter}. Probable area: {a}{unit + two_in_index if unit != "" else ""}')
@@ -702,7 +705,7 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                         and hypotenuse is not None) \
                     or (second_leg is not None
                         and hypotenuse is not None):
-                print("\nThe area " + accurate_string)
+                print('\nThe area ' + accurate_string)
                 print(
                     f'Area: {acm}'
                     f'{unit + two_in_index if unit is not None else ""}')
@@ -717,7 +720,10 @@ def pythagorean_theorem_function(*, first_leg: int | float | None = None,
                         area_list.append(f'{a}{unit + two_in_index}')
                     print(area_list)
             elif not isinstance(acm, list):
-                print(acm)
+                if unit == '':
+                    print(acm)
+                else:
+                    print(f'{acm}{unit + two_in_index}')
 
 
 def pythagorean_theorem_run_function(*, first_leg: int | float | None = None,
